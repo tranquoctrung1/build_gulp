@@ -1,0 +1,21 @@
+{
+  "name": "Quốc Trung",
+  "description": "testing ",
+  "main": "index.js",
+  "authors": [
+    "Ngôi sao đen"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/tranquoctrung1/BT_01",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^4.3.1",
+    "popper.js": "^1.14.7"
+  }
+}
