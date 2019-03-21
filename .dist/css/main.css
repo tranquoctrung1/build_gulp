@@ -1,9 +1,5 @@
-.ad {
-  color: green; }
+section .container-fluid .col-6 {
+  display: flex;
+  align-items: center;
+  justify-content: center; }
 
-body {
-  background: red; }
-
-.ads {
-  color: aliceblue;
-  background: blue; }

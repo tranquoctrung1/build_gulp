@@ -1,1 +1,1 @@
-function my(){console.log("Heello!")}console.log("hehehehheeheh"),console.log("cccccc"),console.log("dsadasdsasasdsadsa");
+"use strict";$(".demo").on("click",()=>{$("#demo").slideToggle("slow")}),$("#res").on("click",function(){$(this).attr("href","./about.html")}),$(".owl-carousel").owlCarousel({loop:!0,margin:10,animateIn:"bounceInLeft",rtl:!0,nav:!0,autoplay:!0,autoplayTimeout:3e3,autoplayHoverPause:!0,center:!0,responsive:{0:{items:1},600:{items:1},1000:{items:1}}});
