@@ -1,5 +1,11 @@
-section .container-fluid .col-6 {
-  display: flex;
-  align-items: center;
-  justify-content: center; }
+body {
+  background: black; }
+  body .container {
+    background: white; }
+    body .container .item {
+      display: flex;
+      justify-content: center;
+      align-items: center; }
+      body .container .item img {
+        width: 50% !important; }
 

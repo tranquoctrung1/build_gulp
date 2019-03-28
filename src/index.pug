@@ -8,46 +8,43 @@ html(lang="en")
 		link(rel="stylesheet" href="./css/thuvien.css")
 		link(rel="stylesheet" href="./css/main.css")
 		title Trung
-	body
-		p#demo Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates illum ullam qui quae, repellat quam ipsa eligendi laborum placeat sit ratione dignissimos eos dicta vero saepe accusantium culpa. Iure, autem.
-		button.demo Check
-		a#res(href="" target="_blank", rel="noopener noreferrer")  about page
-		button#gotogoogle go to google
-		section.mt-4
-			.container-fluid
+	body.text-center
+		section
+			.container
+				.row.mb-3
+					.col-12
+						img#show(src="./img/img2.png", alt="", srcset="")
+					.col-12.mt-3
+						button#play(onclick="MySlider()") Play
 				.row
-					.col-6
-						img.img-fluid(src="./img/img.png", alt="hinh anh dong ho", srcset="")
-					.col-6
-						img.img-fluid(src="./img/img.png", alt="hinh anh dong ho", srcset="")
-		b.fa.fa-user-circle
-		i.fa.fa-address-book.fa-2x
+					.col-4
+						img#show1.img-fluid(src="./img/img1.png", alt="", srcset="")
+					.col-4
+						img#show2.img-fluid(src="./img/img2.png", alt="", srcset="")
+					.col-4
+						img#show3.img-fluid(src="./img/img3.png", alt="", srcset="")
+			a(href="http://google.com", target="_blank", rel="noopener noreferrer") Click go to google.co page
+				
+		.animated.bounceInRight.text-danger.mb-3(style="font-size: 40px") ANIMATED
+		.container
+			.row
+				.col
+					.owl-carousel.owl-theme
+						.item
+							img.img-fluid(src="./img/img1.png", alt="image of icon", srcset="") 
+						.item
+							img.img-fluid(src="./img/img1.png", alt="image of icon", srcset="") 
+						.item
+							img.img-fluid(src="./img/img1.png", alt="image of icon", srcset="") 
+						.item
+							img.img-fluid(src="./img/img1.png", alt="image of icon", srcset="") 
+						.item
+							img.img-fluid(src="./img/img1.png", alt="image of icon", srcset="") 
+						.item
+							img.img-fluid(src="./img/img1.png", alt="image of icon", srcset="") 
 
-		.animated.bounceInRight.text-danger(style="font-size: 30px") animated
-		.owl-carousel.owl-theme
-			.item
-				h4 1
-			.item
-				h4 2
-			.item
-				h4 3
-			.item
-				h4 4
-			.item
-				h4 5
-			.item
-				h4 6
-			.item
-				h4 7
-			.item
-				h4 8
-			.item
-				h4 9
-			.item
-				h4 10
-			.item
-				h4 11
-			.item
-				h4 12
+					
+					
+					
 		script(src="./js/thuvien.js")
 		script(src="./js/main.js")
