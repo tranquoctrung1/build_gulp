@@ -1,15 +1,21 @@
 # Design By : Quốc Trung
 
 ```
-	 _______           _______  _______   _________ _______           _        _______ 
-	(  ___  )|\     /|(  ___  )(  ____ \  \__   __/(  ____ )|\     /|( (    /|(  ____ \
-	| (   ) || )   ( || (   ) || (    \/     ) (   | (    )|| )   ( ||  \  ( || (    \/
-	| |   | || |   | || |   | || |           | |   | (____)|| |   | ||   \ | || |      
-	| |   | || |   | || |   | || |           | |   |     __)| |   | || (\ \) || | ____ 
-	| | /\| || |   | || |   | || |           | |   | (\ (   | |   | || | \   || | \_  )
-	| (_\ \ || (___) || (___) || (____/\     | |   | ) \ \__| (___) || )  \  || (___) |
-	(____\/_)(_______)(_______)(_______/     )_(   |/   \__/(_______)|/    )_)(_______)
-                                                                                   
+	   ____                                       __________                                      
+	  6MMMMb                                      MMMMMMMMMM                                      
+	 8P    Y8                                     /   MM   \                                      
+	6M      Mb ___   ___   _____     ____             MM     ___  __ ___   ___ ___  __     __     
+	MM      MM `MM    MM  6MMMMMb   6MMMMb.           MM     `MM 6MM `MM    MM `MM 6MMb   6MMbMMM 
+	MM      MM  MM    MM 6M'   `Mb 6M'   Mb           MM      MM69 "  MM    MM  MMM9 `Mb 6M'`Mb   
+	MM      MM  MM    MM MM     MM MM    `'           MM      MM'     MM    MM  MM'   MM MM  MM   
+	MM      MM  MM    MM MM     MM MM                 MM      MM      MM    MM  MM    MM YM.,M9   
+	YM      M9  MM    MM MM     MM MM                 MM      MM      MM    MM  MM    MM  YMM9    
+	 8b    d8   YM.   MM YM.   ,M9 YM.   d9           MM      MM      YM.   MM  MM    MM (M       
+	  YMMMM9     YMMM9MM_ YMMMMM9   YMMMM9           _MM_    _MM_      YMMM9MM__MM_  _MM_ YMMMMb. 
+	    MM                                                                               6M    Yb 
+	    YM.                                                                              YM.   d9 
+	     `Mo                                                                              YMMMM9  
+
 ```
 #### Source: https://github.com/tranquoctrung1/build_gulp
 
