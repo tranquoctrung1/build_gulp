@@ -18,7 +18,7 @@ gulp.task('browser-sync',()=>{
 
 
 gulp.task('create-js',() => {
-    return gulp.src(['./src/js/_pages/**/*.js' ])
+    return gulp.src(['./src/js/**/*.js' ])
     .pipe(plumber())
     .pipe(uglify())
     .pipe(concat('main.js'))
@@ -27,7 +27,7 @@ gulp.task('create-js',() => {
 
 gulp.task("create-html",() =>
 {
-    return gulp.src(['./src/**/*.pug'])
+    return gulp.src(['./src/templates/**/*.pug','!./src/templates/{**/\_*,**/\_*/**}.pug'])
     .pipe(plumber())
     .pipe(pug({
         pretty: true
@@ -37,7 +37,7 @@ gulp.task("create-html",() =>
 
 gulp.task('create-css',() =>
 {
-    return gulp.src('./src/sass/**/*.sass')
+    return gulp.src(['./src/sass/**/*.sass','!./src/sass/{**/\_*,**/\_*/**}'])
     .pipe(plumber())
     .pipe(sass().on('error', sass.logError))
     .pipe(concat('main.css'))
@@ -115,9 +115,9 @@ gulp.task('noi-file-js', () =>
 
 gulp.task('watch',() =>
 {
-    gulp.watch('./src/js/_pages/**/*.js',['create-js']),
+    gulp.watch('./src/js/**/*.js',['create-js']),
     gulp.watch('./src/sass/**/*.sass',['create-css']),
-    gulp.watch('./src/**/*.pug',['create-html']),
+    gulp.watch('./src/templates/**/*.pug',['create-html']),
     gulp.watch('./src/img/*.*',['copy-img']),
     gulp.watch('./src/**/*.*').on('change',browserSync.reload);
 })

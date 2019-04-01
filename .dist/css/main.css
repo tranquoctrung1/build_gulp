@@ -1,3 +1,9 @@
+header {
+  color: red; }
+
+footer {
+  color: green; }
+
 body {
   background: black; }
   body .container {
@@ -9,3 +15,5 @@ body {
       body .container .item img {
         width: 50% !important; }
 
+.ad {
+  color: green; }

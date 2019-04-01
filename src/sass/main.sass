@@ -1,10 +1,16 @@
-body
-  background: black
-  .container
-    background: white
-    .item
-      display: flex
-      justify-content: center
-      align-items: center
-      img
-        width: 50%!important
+
+
+// Import các css chung
+  @import _common/mixin
+  @import _common/global
+
+
+
+
+// Import header và footer
+@import _partials/header
+@import _partials/footer
+
+// Import các trang vào trong dự án
+@import _pages/index
+@import _pages/about
