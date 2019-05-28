@@ -1,6 +1,10 @@
 'use strict'
-
-
+// scroll function for window screen
+$(window).scroll(() =>
+{
+	console.log($(this).scrollTop())
+	$(this).scrollTop() > 100 ? $('#scroll-top').css({"opacity": 1}) : $('#scroll-top').css({"opacity": 0})
+})
 
 $(".demo").on('click',() =>
 {
