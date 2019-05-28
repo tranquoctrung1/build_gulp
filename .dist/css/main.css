@@ -17,3 +17,16 @@ body {
 
 .ad {
   color: green; }
+
+html {
+  scroll-behavior: smooth; }
+
+#section1 {
+  height: 60rem;
+  background: whitesmoke;
+  margin-bottom: 3rem; }
+
+#section2 {
+  height: 60rem;
+  background: red;
+  margin-bottom: 3rem; }

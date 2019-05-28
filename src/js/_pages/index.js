@@ -34,11 +34,13 @@ function MySlider()
 	}, 1000);
 }
 
-$('a').on('click',(e) =>
-{
-	e.preventDefault()
-	$('a').append("  Hello !")
-})
+
+// this function make a tag don't switch when click it 
+// $('a').on('click',(e) =>
+// {
+// 	e.preventDefault()
+// 	$('a').append("  Hello !")
+// })
 
 
 $('.owl-carousel').owlCarousel({
