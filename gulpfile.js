@@ -5,27 +5,34 @@ var sass = require('gulp-sass');
 var plumber = require('gulp-plumber')
 var uglify = require('gulp-uglify-es').default;
 var pug = require('gulp-pug');
-var autoprefixer = require('gulp-autoprefixer');
 sass.compiler = require('node-sass');
 
-gulp.task('browser-sync',()=>{
-    browserSync.init({
+function reload(done) {
+    browserSync.reload();
+    done();
+  }
+
+function browser_sync ()
+{
+    return browserSync.init({
         server : {
             baseDir: "./.dist"
         }
     });
-});
+}
 
 
-gulp.task('create-js',() => {
+function create_js ()
+{
     return gulp.src(['./src/js/**/*.js' ])
     .pipe(plumber())
     .pipe(uglify())
     .pipe(concat('main.js'))
     .pipe(gulp.dest("./.dist/js"));
-})
+}
 
-gulp.task("create-html",() =>
+
+function create_html () 
 {
     return gulp.src(['./src/templates/**/*.pug','!./src/templates/{**/\_*,**/\_*/**}.pug'])
     .pipe(plumber())
@@ -33,73 +40,85 @@ gulp.task("create-html",() =>
         pretty: true
     }))
     .pipe(gulp.dest('./.dist'))
-})
+}
 
-gulp.task('create-css',() =>
+
+function create_css()
 {
     return gulp.src(['./src/sass/**/*.sass','!./src/sass/{**/\_*,**/\_*/**}'])
     .pipe(plumber())
     .pipe(sass().on('error', sass.logError))
     .pipe(concat('main.css'))
     .pipe(gulp.dest('./.dist/css'))
-  .pipe(browserSync.stream());
+    .pipe(browserSync.stream());
+}
 
-})
 
-gulp.task('noi-file-css', () => {
+function noi_file_css ()
+{
     return gulp.src([
         'bower_components/bootstrap/dist/css/bootstrap.min.css',
         'bower_components/font-awesome/css/font-awesome.min.css',
         'node_modules/@fortawesome/fontawesome-free/css/all.css',
         'bower_components/animate.css/animate.min.css',
+        'bower_components/jquery-lazy/jquery.lazy.min.js',
         // owl carousel
         'bower_components/owl.carousel/dist/assets/owl.carousel.min.css',
         'bower_components/owl.carousel/dist/assets/owl.theme.default.min.css',
     ])
     .pipe(concat('thuvien.css'))
     .pipe(gulp.dest('./.dist/css'));
-})
+}
 
-gulp.task('copy-img',()=> {
+
+
+function copy_img ()
+{
     return gulp.src(['./src/img/*.*'])
     .pipe(gulp.dest('./.dist/img'));
-})
+}
 
-gulp.task('copy-fonts',() =>
+
+function copy_fonts()
 {
     return gulp.src('./src/fonts/*.*')
     .pipe(gulp.dest('./.dist/fonts'));
-})
-gulp.task('copy-webfonts',() =>
-{
+}
+
+
+function copy_webfonts () {
     return gulp.src('./src/webfonts/*.*')
     .pipe(gulp.dest('./.dist/webfonts'));
-})
+  }
 
-gulp.task('copy-favicon',()=>
+
+function copy_favicon ()
 {
     return gulp.src('./src/favicon/*.*')
     .pipe(gulp.dest('./.dist/favicon'));
-})
+}
 
-gulp.task('autoprefixer',  () =>{
-    return gulp.src([
-            './.dist/css/main.css',
-        ])
-        .pipe(autoprefixer({
-            browsers: [
-                'last 2 versions',
-                'iOS >= 7',
-                'Android >= 4',
-                'Explorer >= 10',
-                'ExplorerMobile >= 11'
-            ],
-            cascade: false
-        }))
-        .pipe(gulp.dest('./.dist/css'));
-});
 
-gulp.task('noi-file-js', () =>
+// function autoprefixer()
+// {
+//     return gulp.src([
+//         './.dist/css/main.css',
+//     ])
+//     .pipe(autoprefixer({
+//         browsers: [
+//             'last 2 versions',
+//             'iOS >= 7',
+//             'Android >= 4',
+//             'Explorer >= 10',
+//             'ExplorerMobile >= 11'
+//         ],
+//         cascade: false
+//     }))
+//     .pipe(gulp.dest('./.dist/css'));
+// }
+
+
+function noi_file_js ()
 {
     return gulp.src([
         'bower_components/jquery/dist/jquery.min.js',
@@ -111,29 +130,31 @@ gulp.task('noi-file-js', () =>
     ])
     .pipe(concat('thuvien.js'))
     .pipe(gulp.dest('./.dist/js'));
-})
+}
 
-gulp.task('watch',() =>
+
+function watch()
 {
-    gulp.watch('./src/js/**/*.js',['create-js']),
-    gulp.watch('./src/sass/**/*.sass',['create-css']),
-    gulp.watch('./src/templates/**/*.pug',['create-html']),
-    gulp.watch('./src/img/*.*',['copy-img']),
-    gulp.watch('./src/**/*.*').on('change',browserSync.reload);
-})
+    gulp.watch('./src/js/**/*.js',gulp.series(create_js,reload))
+    gulp.watch('./src/sass/**/*.sass',gulp.series(create_css,reload))
+    gulp.watch('./src/templates/**/*.pug',gulp.series(create_html,reload))
+    gulp.watch('./src/img/*.*',gulp.series(copy_img,reload))
+    // có thể comment 4 dòng trên cùng cũng dc
+    gulp.watch('./src/**/*',gulp.series(reload))
+}
 
-
-gulp.task('default',[
-    'create-js',
-    'create-css',
-    'noi-file-css',
-    'noi-file-js',
-    'copy-img',
-    'create-html',
-    'copy-fonts',
-    'copy-webfonts',
-    'copy-favicon',
-    'watch',
-    'browser-sync',
-])
+//default task
+exports.default = gulp.series(
+    create_html,
+    create_js,
+    create_css,
+    copy_img,
+    noi_file_css,
+    noi_file_js,
+    copy_fonts,
+    copy_favicon,
+    copy_webfonts,
+    // chạy song mới được
+    gulp.parallel(browser_sync,watch)
+)
 

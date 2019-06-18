@@ -16,6 +16,8 @@
 
 
 ```
+
+## Với gulp 4 thì cần phải node 12 
 #### Source: https://github.com/tranquoctrung1/build_gulp
 
 ##### clone folder về chạy bằng các dòng lệnh sau: 
@@ -26,5 +28,4 @@
 
 
 ###### **3/ Chạy lên web  dùng lệnh** 
-######  **npm start hay là gulp**
-
+###### **npm start hay là gulp**

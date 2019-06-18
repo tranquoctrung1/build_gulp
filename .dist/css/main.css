@@ -18,6 +18,9 @@ body {
 .ad {
   color: green; }
 
+.classname {
+  color: red; }
+
 #section1 {
   height: 60rem;
   background: whitesmoke;
