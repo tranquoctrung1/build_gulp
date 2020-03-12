@@ -1,0 +1,21 @@
+h2 
+	text-align: center
+	margin: 5px 5px 10px 5px
+	transition: all .5s ease-in-out
+	position: relative
+	&::before
+		position: absolute
+		display: block
+		content: ''
+		width: 20%
+		height: 2px
+		bottom: -5px
+		left: 50%
+		transform: translateX(-50%)
+		background: red
+		opacity: 0
+		transition: all .5s ease-in-out
+	&:hover
+		color: red
+		&::before
+			opacity: 1

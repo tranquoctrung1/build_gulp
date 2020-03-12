@@ -1,2 +1,24 @@
 header.text-center#top
-	h1 This is the header
+	nav.navbar.navbar-expand-lg.navbar-light.bg-light
+		a.navbar-brand(href="#") TQTr
+		button.navbar-toggler(type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation")
+			span.navbar-toggler-icon
+		#navbarSupportedContent.collapse.navbar-collapse
+			.mr-auto
+			ul.navbar-nav
+				li.nav-item.active
+					a.nav-link(href="#")
+						| Trang chủ 
+						span.sr-only (current)
+				li.nav-item
+					a.nav-link(href="#") Liên kết
+				li.nav-item.dropdown
+					a#navbarDropdown.nav-link.dropdown-toggle(href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false")
+						| Dropdown
+					.dropdown-menu(aria-labelledby="navbarDropdown")
+						a.dropdown-item(href="#") Action
+						a.dropdown-item(href="#") Another action
+						.dropdown-divider
+						a.dropdown-item(href="#") Something else here
+				li.nav-item
+					a.nav-link.disabled(href="#" tabindex="-1" aria-disabled="true") TQTr

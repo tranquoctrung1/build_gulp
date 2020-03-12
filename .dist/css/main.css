@@ -4,16 +4,14 @@ header {
 footer {
   color: green; }
 
-body {
-  background: black; }
-  body .container {
-    background: white; }
-    body .container .item {
-      display: flex;
-      justify-content: center;
-      align-items: center; }
-      body .container .item img {
-        width: 50% !important; }
+body .container {
+  background: white; }
+  body .container .item {
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    body .container .item img {
+      width: 50% !important; }
 
 .ad {
   color: green; }
@@ -30,3 +28,25 @@ body {
   height: 60rem;
   background: red;
   margin-bottom: 3rem; }
+
+h2 {
+  text-align: center;
+  margin: 5px 5px 10px 5px;
+  transition: all .5s ease-in-out;
+  position: relative; }
+  h2::before {
+    position: absolute;
+    display: block;
+    content: '';
+    width: 20%;
+    height: 2px;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: red;
+    opacity: 0;
+    transition: all .5s ease-in-out; }
+  h2:hover {
+    color: red; }
+    h2:hover::before {
+      opacity: 1; }

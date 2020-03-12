@@ -6,37 +6,37 @@ $(window).scroll(() =>
 	$(this).scrollTop() > 100 ? $('#scroll-top').css({"opacity": 1}) : $('#scroll-top').css({"opacity": 0})
 })
 
-$(".demo").on('click',() =>
-{
-	$("#demo").slideToggle("slow")
-})
-$("#res").on('click',function()
-{
-	$(this).attr('href','./about.html')
-})
+// $(".demo").on('click',() =>
+// {
+// 	$("#demo").slideToggle("slow")
+// })
+// $("#res").on('click',function()
+// {
+// 	$(this).attr('href','./about.html')
+// })
 
-$("#show1").on('click',(e) =>{
-	var x = e.target.src.slice(21);
-	$("#show").attr('src',`.${x}`)
-})
-$("#show2").on('click',(e) =>{
-	var x = e.target.src.slice(21);
-	$("#show").attr('src',`.${x}`)
-})
-$("#show3").on('click',(e) =>{
-	var x = e.target.src.slice(21);
-	$("#show").attr('src',`.${x}`).css({
-		"width":"30%"
-	})	
-})
-function MySlider()
-{
-	var i = 0 ;
-	var index =["1","2","3"]
-	setInterval(() => {
-		$('#show').attr('src',`./img/img${index[i++%3]}.png`)
-	}, 1000);
-}
+// $("#show1").on('click',(e) =>{
+// 	var x = e.target.src.slice(21);
+// 	$("#show").attr('src',`.${x}`)
+// })
+// $("#show2").on('click',(e) =>{
+// 	var x = e.target.src.slice(21);
+// 	$("#show").attr('src',`.${x}`)
+// })
+// $("#show3").on('click',(e) =>{
+// 	var x = e.target.src.slice(21);
+// 	$("#show").attr('src',`.${x}`).css({
+// 		"width":"30%"
+// 	})	
+// })
+// function MySlider()
+// {
+// 	var i = 0 ;
+// 	var index =["1","2","3"]
+// 	setInterval(() => {
+// 		$('#show').attr('src',`./img/img${index[i++%3]}.png`)
+// 	}, 1000);
+// }
 
 
 // this function make a tag don't switch when click it 
@@ -45,9 +45,6 @@ function MySlider()
 // 	e.preventDefault()
 // 	$('a').append("  Hello !")
 // })
-
-
-
 
 $('.owl-carousel').owlCarousel({
 	loop:true,
@@ -107,5 +104,11 @@ $('a[href*="#"]')
       }
     }
   });
+
+// tooltip
+
+  $(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+  })
 
   console.log(1111)
